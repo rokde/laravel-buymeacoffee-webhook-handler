@@ -22,7 +22,7 @@ class VerifyWebhook
         }
 
         $signature = $request->header('X-Signature-Sha256');
-        if (!$signature) {
+        if (! $signature) {
             return false;
         }
 

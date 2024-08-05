@@ -14,10 +14,7 @@ abstract class BmcEvent
         private int $attempt,
         private Carbon $sendAt,
         private int $eventId,
-    )
-    {
-
-    }
+    ) {}
 
     public static function makeFromRequest(Request $request): static
     {
@@ -37,7 +34,7 @@ abstract class BmcEvent
 
     public function testMode(): bool
     {
-        return !$this->liveMode();
+        return ! $this->liveMode();
     }
 
     public function attempt(): int
@@ -85,7 +82,7 @@ abstract class BmcEvent
         return Boolean::transform(data_get($this->payload, 'note_hidden'));
     }
 
-    public function supportNote(): string|null
+    public function supportNote(): ?string
     {
         return data_get($this->payload, 'support_note');
     }

@@ -3,7 +3,6 @@
 namespace Rokde\LaravelBuyMeACoffeeWebhookHandler\Events;
 
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Str;
 use Rokde\LaravelBuyMeACoffeeWebhookHandler\Transformer\Boolean;
 
 abstract class MembershipEvent extends BmcEvent
@@ -43,10 +42,10 @@ abstract class MembershipEvent extends BmcEvent
         return Carbon::parse(data_get($this->payload, 'started_at'));
     }
 
-    public function canceledAt(): Carbon|null
+    public function canceledAt(): ?Carbon
     {
         $canceledAt = data_get($this->payload, 'canceled_at');
-        if (!$canceledAt) {
+        if (! $canceledAt) {
             return null;
         }
 

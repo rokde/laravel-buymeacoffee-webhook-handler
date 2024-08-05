@@ -10,7 +10,7 @@ class ExtrasPurchased extends PaymentEvent
     public function extras(): array
     {
         return collect(data_get($this->payload, 'extras', []))
-            ->map(fn(array $extra) => Extra::fromArray($extra))
+            ->map(fn (array $extra) => Extra::fromArray($extra))
             ->all();
     }
 }

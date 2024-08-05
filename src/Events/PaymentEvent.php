@@ -27,11 +27,11 @@ abstract class PaymentEvent extends BmcEvent
         return Carbon::parse(data_get($this->payload, 'created_at'));
     }
 
-    public function refundedAt(): Carbon|null
+    public function refundedAt(): ?Carbon
     {
         $refundedAt = data_get($this->payload, 'refunded_at');
 
-        if (!$refundedAt) {
+        if (! $refundedAt) {
             return null;
         }
 
