@@ -14,14 +14,11 @@ final readonly class Extra
         public string $description,
         public string $question,
         public array $answers,
-    )
-    {
-
-    }
+    ) {}
 
     public static function fromArray(array $extra): static
     {
-        return new static(
+        return new self(
             id: (int) data_get($extra, 'id'),
             title: (string) data_get($extra, 'title'),
             amount: (float) data_get($extra, 'amount'),
@@ -32,4 +29,5 @@ final readonly class Extra
             question: (string) data_get($extra, 'question'),
             answers: (array) data_get($extra, 'answers', []),
         );
-    }}
+    }
+}

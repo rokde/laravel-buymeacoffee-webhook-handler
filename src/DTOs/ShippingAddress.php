@@ -11,14 +11,11 @@ final readonly class ShippingAddress
         public string $city,
         public string $state,
         public string $country,
-    )
-    {
-
-    }
+    ) {}
 
     public static function fromArray(array $extra): static
     {
-        return new static(
+        return new self(
             name: (string) data_get($extra, 'name'),
             street: (string) data_get($extra, 'street'),
             zip: (string) data_get($extra, 'zip'),

@@ -18,14 +18,11 @@ final readonly class Commission
         public float $discountAmount,
         public ShippingAddress $shippingAddress,
         public float $totalOrderAmount,
-    )
-    {
-
-    }
+    ) {}
 
     public static function fromArray(array $extra): static
     {
-        return new static(
+        return new self(
             id: (int) data_get($extra, 'id'),
             name: (string) data_get($extra, 'name'),
             addons: (array) data_get($extra, 'addons'),

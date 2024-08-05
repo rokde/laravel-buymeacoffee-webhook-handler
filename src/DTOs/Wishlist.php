@@ -12,14 +12,11 @@ final readonly class Wishlist
         public bool $completed,
         public float $totalPaid,
         public string $description,
-    )
-    {
-
-    }
+    ) {}
 
     public static function fromArray(array $extra): static
     {
-        return new static(
+        return new self(
             id: (int) data_get($extra, 'id'),
             price: (float) data_get($extra, 'price'),
             title: (string) data_get($extra, 'title'),
