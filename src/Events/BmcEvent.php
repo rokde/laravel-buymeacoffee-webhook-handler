@@ -99,6 +99,6 @@ abstract class BmcEvent
 
     public function supporterEmail(): string
     {
-        return (string) data_get($this->payload, 'supporter_name');
+        return (string) data_get($this->payload, 'supporter_email');
     }
 }
