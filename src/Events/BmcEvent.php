@@ -8,7 +8,7 @@ use Rokde\LaravelBuyMeACoffeeWebhookHandler\Transformer\Boolean;
 
 abstract class BmcEvent
 {
-    public function __construct(
+    final public function __construct(
         protected array $payload,
         private bool $liveMode,
         private int $attempt,
