@@ -23,7 +23,7 @@ abstract class BmcEvent
             $request->boolean('live_mode'),
             $request->integer('attempt'),
             $request->date('created'),
-            $request->integer('eventId'),
+            $request->integer('event_id'),
         );
     }
 
