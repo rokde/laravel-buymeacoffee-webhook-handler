@@ -1,4 +1,4 @@
-# TBuy me a coffee webhook receiving handler in Laravel
+# Buy me a coffee webhook receiving handler in Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rokde/laravel-buymeacoffee-webhook-handler.svg?style=flat-square)](https://packagist.org/packages/rokde/laravel-buymeacoffee-webhook-handler)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/rokde/laravel-buymeacoffee-webhook-handler/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/rokde/laravel-buymeacoffee-webhook-handler/actions?query=workflow%3Arun-tests+branch%3Amain)
