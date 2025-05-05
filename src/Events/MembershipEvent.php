@@ -34,7 +34,7 @@ abstract class MembershipEvent extends BmcEvent
 
     public function membershipLevelName(): string
     {
-        return (int) data_get($this->payload, 'membership_level_name');
+        return (string) data_get($this->payload, 'membership_level_name');
     }
 
     public function startedAt(): Carbon

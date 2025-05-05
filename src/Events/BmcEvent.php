@@ -8,7 +8,7 @@ use Rokde\LaravelBuyMeACoffeeWebhookHandler\Transformer\Boolean;
 
 abstract class BmcEvent
 {
-    public function __construct(
+    final public function __construct(
         protected array $payload,
         private bool $liveMode,
         private int $attempt,
@@ -23,7 +23,7 @@ abstract class BmcEvent
             $request->boolean('live_mode'),
             $request->integer('attempt'),
             $request->date('created'),
-            $request->integer('eventId'),
+            $request->integer('event_id'),
         );
     }
 
@@ -99,6 +99,6 @@ abstract class BmcEvent
 
     public function supporterEmail(): string
     {
-        return (string) data_get($this->payload, 'supporter_name');
+        return (string) data_get($this->payload, 'supporter_email');
     }
 }
