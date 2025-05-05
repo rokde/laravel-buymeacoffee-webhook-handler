@@ -19,11 +19,11 @@ abstract class BmcEvent
     public static function makeFromRequest(Request $request): static
     {
         return new static(
-            $request->get('data'),
-            $request->boolean('live_mode'),
-            $request->integer('attempt'),
-            $request->date('created'),
-            $request->integer('event_id'),
+            payload: $request->get('data'),
+            liveMode: $request->boolean('live_mode'),
+            attempt: $request->integer('attempt'),
+            sendAt: $request->date('created'),
+            eventId: $request->integer('event_id'),
         );
     }
 
